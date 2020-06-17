@@ -5,7 +5,9 @@ const icon=document.querySelector(".fa");
 const headline=document.querySelector(".headline");
 
 
-const tl=new TimelineMax();
+const tl=new TimelineMax({onComplete:function(){
+    this.restart();
+}});
 
 tl.fromTo(hero, 1, {height: "0%"}, {height: "80%", ease: Power2.easeInOut})
 .fromTo(hero, 1.2, {width: '100%'}, {width: "80%", ease: Power2.easeInOut})
